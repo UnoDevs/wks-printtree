@@ -45,13 +45,13 @@ ArvNo* remover_arv(ArvNo* raiz, int chave){
                 return NULL;
              } else {
                 if(raiz->no_dir != NULL && raiz->no_esq != NULL){
-                   ArvNo* aux = raiz->no_dir;
+                   ArvNo* aux = raiz->no_esq;
                    while(aux->no_dir != NULL){
                       aux = aux->no_dir;
                    }
                    raiz->valor = aux->valor;
                    aux->valor = chave;
-                   raiz->no_dir = remover_arv(raiz->no_dir,chave);
+                   raiz->no_esq = remover_arv(raiz->no_esq,chave);
                    return raiz;
                 } else {
                    ArvNo *aux;
